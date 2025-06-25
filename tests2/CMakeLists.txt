@@ -9,7 +9,7 @@ function(add_ttmath_test exponent mantissa)
 			"-DCMAKE_COMMAND=${CMAKE_COMMAND}"
 			"-DTEST=$<TARGET_FILE:big_${exponent}_${mantissa}>"
 			"-DINPUT=${CMAKE_CURRENT_SOURCE_DIR}/tests.txt"
-			"-DOUTPUT=$<PATH:NATIVE_PATH,${CMAKE_CURRENT_BINARY_DIR}/big_${exponent}_${mantissa}.txt>"
+			"-DOUTPUT=${CMAKE_CURRENT_BINARY_DIR}/big_${exponent}_${mantissa}.txt"
 			"-DEXPECTED=${CMAKE_CURRENT_SOURCE_DIR}/big_${exponent}_${mantissa}.expected"
 			-P "${CMAKE_CURRENT_SOURCE_DIR}/big_test.cmake"
 		WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
